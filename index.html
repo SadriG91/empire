@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empire: Epochs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="topbar">
+      <div class="res" title="Food"><span>🍖</span><b id="r-food">0</b></div>
+      <div class="res" title="Wood"><span>🪵</span><b id="r-wood">0</b></div>
+      <div class="res" title="Stone"><span>🪨</span><b id="r-stone">0</b></div>
+      <div class="res" title="Gold"><span>🪙</span><b id="r-gold">0</b></div>
+      <div class="res" title="Population"><span>👥</span><b id="r-pop">0/0</b></div>
+      <div id="epoch">Stone Age</div>
+      <button id="idle-btn" title="Select idle citizen ( . )">💤 <span id="idle-n">0</span></button>
+      <div class="spacer"></div>
+      <div id="wonder-timer"></div>
+      <div id="clock">0:00</div>
+      <button id="btn-speed" title="Game speed">1x</button>
+      <button id="btn-pause" title="Pause (P)">⏸</button>
+      <button id="btn-help" title="Help (F1)">?</button>
+    </div>
+    <div id="view">
+      <canvas id="game"></canvas>
+      <div id="messages"></div>
+      <div id="paused" class="hidden">PAUSED</div>
+    </div>
+    <div id="panel">
+      <div id="mm-wrap"><canvas id="minimap" width="176" height="176"></canvas></div>
+      <div id="info"></div>
+      <div id="commands"></div>
+    </div>
+  </div>
+  <div id="tooltip"></div>
+
+  <div id="overlay-start" class="overlay">
+    <div class="card">
+      <h1>Empire<span>: Epochs</span></h1>
+      <p class="tag">Lead your people from the Stone Age to the Modern Age.</p>
+      <div class="row">
+        <label>Difficulty</label>
+        <div class="seg" id="diff">
+          <button data-v="easy">Easy</button><button data-v="normal" class="on">Normal</button><button data-v="hard">Hard</button>
+        </div>
+      </div>
+      <div class="row">
+        <label for="seed">Map seed</label>
+        <input id="seed" placeholder="random" maxlength="10">
+      </div>
+      <button id="btn-start" class="big">Start Game</button>
+      <div class="how">
+        <b>How to win:</b> destroy the rival's Town Centers and citizens, or build a Wonder and defend it for 5 minutes.
+        <br>Press <kbd>F1</kbd> in game for controls.
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay-help" class="overlay hidden">
+    <div class="card wide">
+      <h2>Controls</h2>
+      <div class="cols">
+        <div>
+          <p><kbd>Left-click</kbd> select · <kbd>drag</kbd> box-select · <kbd>Shift</kbd> add</p>
+          <p><kbd>Double-click</kbd> select all of that type on screen</p>
+          <p><kbd>Right-click</kbd> move / attack / gather / build / repair / set rally point</p>
+          <p><kbd>A</kbd> attack-move · <kbd>S</kbd> stop · <kbd>Del</kbd> delete</p>
+          <p><kbd>Ctrl+1-9</kbd> make group · <kbd>1-9</kbd> select group (tap twice to jump)</p>
+          <p><kbd>.</kbd> next idle citizen · <kbd>H</kbd> Town Center · <kbd>Space</kbd> jump home</p>
+          <p><kbd>Arrows</kbd> / screen edges scroll · <kbd>Wheel</kbd> zoom · <kbd>P</kbd> pause</p>
+        </div>
+        <div>
+          <p><b>Economy.</b> Citizens gather food (berries, farms), wood, stone and gold and bring it to a Town Center or Storehouse. Houses raise your population limit.</p>
+          <p><b>Epochs.</b> Advance at the Town Center. Every epoch unlocks buildings, upgrades all existing soldiers and boosts gathering.</p>
+          <p><b>Counters.</b> Spears &amp; guns beat cavalry · cavalry beats ranged &amp; siege · ranged beats infantry · siege wrecks buildings.</p>
+          <p>Hotkeys for buildings and units are shown on each button.</p>
+        </div>
+      </div>
+      <button id="btn-help-close" class="big">Back to game</button>
+    </div>
+  </div>
+
+  <div id="overlay-end" class="overlay hidden">
+    <div class="card">
+      <h1 id="end-title">Victory</h1>
+      <p class="tag" id="end-sub"></p>
+      <table id="end-stats"></table>
+      <button id="btn-again" class="big">Play Again</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
