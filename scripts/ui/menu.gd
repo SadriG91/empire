@@ -74,6 +74,7 @@ func _ready() -> void:
 	grid.add_child(seed_edit)
 	grid.add_child(_lbl("Reveal map"))
 	reveal_check = CheckBox.new()
+	reveal_check.text = "Show the whole map"
 	grid.add_child(reveal_check)
 
 	v.add_child(HSeparator.new())

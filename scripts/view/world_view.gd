@@ -3,7 +3,7 @@ extends Node3D
 ## Renders the simulation: terrain, water, fog of war, trees, entities, projectiles and effects.
 
 const TILE := 2.0
-const UNIT_SCALE := 1.3
+const UNIT_SCALE := 1.5
 const AIR_ALT := 7.0
 const WATER_Y := -0.35
 
@@ -427,7 +427,7 @@ func _plinth(size: int) -> ArrayMesh:
 		return _plinths[size]
 	var b = Models.B.new()
 	var S = size * TILE
-	b.box(Vector3(S * 0.98, 1.6, S * 0.98), Vector3(0, -0.78, 0), Color("#6f6455"))
+	b.box(Vector3(S * 0.94, 1.6, S * 0.94), Vector3(0, -0.78, 0), Color("#5a5044"))
 	_plinths[size] = b.mesh()
 	return _plinths[size]
 

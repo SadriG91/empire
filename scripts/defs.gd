@@ -136,7 +136,7 @@ const PRODUCTION := {
 }
 
 const BUILDINGS := {
-	"town_center": {"name": "Town Center", "size": 3, "hp": 2400, "armor": 2, "cost": {"wood": 300, "stone": 200}, "time": 80, "epoch": 0, "pop": 10, "dropoff": true, "atk": 6, "range": 6.0, "cd": 1.5, "los": 8, "key": "C",
+	"town_center": {"name": "Town Center", "size": 3, "hp": 2400, "armor": 2, "cost": {"wood": 300, "stone": 200}, "time": 80, "epoch": 0, "pop": 10, "dropoff": true, "atk": 10, "range": 7.0, "cd": 1.2, "los": 9, "key": "C",
 		"desc": "Trains citizens and heroes, stores resources, advances epochs. Shoots arrows."},
 	"house": {"name": "House", "size": 2, "hp": 500, "armor": 1, "cost": {"wood": 50}, "time": 18, "epoch": 0, "pop": 5, "los": 3, "key": "E",
 		"desc": "+5 population."},
@@ -156,7 +156,7 @@ const BUILDINGS := {
 		"desc": "Researches military technologies."},
 	"temple": {"name": "Temple", "size": 3, "hp": 1000, "armor": 2, "cost": {"wood": 100, "stone": 150}, "time": 45, "epoch": 1, "los": 6, "key": "Y",
 		"desc": "Trains priests (later medics)."},
-	"tower": {"name": "Tower", "size": 2, "hp": 1100, "armor": 3, "cost": {"wood": 50, "stone": 150}, "time": 40, "epoch": 1, "atk": 9, "range": 7.0, "cd": 1.3, "los": 9, "key": "O",
+	"tower": {"name": "Tower", "size": 2, "hp": 1100, "armor": 3, "cost": {"wood": 50, "stone": 150}, "time": 40, "epoch": 1, "atk": 12, "range": 7.5, "cd": 1.2, "los": 10, "key": "O",
 		"desc": "Defensive tower. Shoots at enemies (and aircraft from the Industrial Age)."},
 	"wall": {"name": "Wall", "size": 1, "hp": 900, "armor": 6, "cost": {"stone": 6}, "time": 5, "epoch": 1, "los": 2, "key": "L", "wall": true,
 		"desc": "Click and drag to build a line of wall. Blocks movement."},
@@ -205,8 +205,8 @@ const TECHS := {
 }
 
 const DIFFICULTY := {
-	"easy": {"gather": 0.75, "first_attack": 600.0, "wave": 5, "wave_grow": 2, "think": 1.5, "army_cap": 0.6, "towers": false, "bonus": 0, "epoch_delay": [0, 480, 960, 1440, 1920, 2400]},
-	"normal": {"gather": 1.0, "first_attack": 420.0, "wave": 7, "wave_grow": 3, "think": 1.0, "army_cap": 0.85, "towers": true, "bonus": 0, "epoch_delay": [0, 300, 600, 900, 1200, 1500]},
+	"easy": {"gather": 0.75, "first_attack": 720.0, "wave": 5, "wave_grow": 2, "think": 1.5, "army_cap": 0.6, "towers": false, "bonus": 0, "epoch_delay": [0, 480, 960, 1440, 1920, 2400]},
+	"normal": {"gather": 1.0, "first_attack": 540.0, "wave": 8, "wave_grow": 3, "think": 1.0, "army_cap": 0.85, "towers": true, "bonus": 0, "epoch_delay": [0, 300, 600, 900, 1200, 1500]},
 	"hard": {"gather": 1.3, "first_attack": 270.0, "wave": 9, "wave_grow": 4, "think": 0.7, "army_cap": 1.0, "towers": true, "bonus": 200, "epoch_delay": [0, 220, 520, 820, 1120, 1420]},
 }
 

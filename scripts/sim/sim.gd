@@ -1499,7 +1499,9 @@ func _check_victory() -> void:
 					break
 		if not has_tc and not has_cit:
 			p.defeated = true
-			msg(0, "%s has been defeated!" % ("You have" if p.id == 0 else p.name), Color("#fde68a"))
+			msg(0, "You have been defeated!" if p.id == 0 else "%s has been defeated!" % p.name, Color("#fde68a"))
+			if p.id == 0:
+				reveal = true
 			if p.id != 0:
 				sfx("fanfare", Vector2.ZERO, true)
 	if players[0].defeated:
